@@ -8,9 +8,9 @@ let alert = require('alert');
 
 // const admin = require('../data/admin');
 
-// const db = "mongodb+srv://admin:1289lash@users.rs1bqhv.mongodb.net/?retryWrites=true&w=majority";
+const db = "mongodb+srv://admin:1289lash@users.rs1bqhv.mongodb.net/test?retryWrites=true&w=majority";
 
-const db = "mongodb+srv://FSDGroup3:Fsdgp3.123@cluster0.1f3izav.mongodb.net/BookNPen?retryWrites=true&w=majority";
+// const db = "mongodb+srv://FSDGroup3:Fsdgp3.123@cluster0.1f3izav.mongodb.net/BookNPen?retryWrites=true&w=majority";
 
 mongoose.connect(db, err=>{
     if(err){
@@ -70,7 +70,7 @@ router.post('/login',(req,res)=>{
                 console.log(error);
             }
             else
-            if(!user.email)
+            if(!user)
             {
             userData.username="Admin";
             userData.role="Admin";
